@@ -22,7 +22,7 @@ unique_ticker = ["GOOGL", "AMD", "TSLA", "NVDA", "XOM"]
 tickerSymbol = st.sidebar.selectbox('Ticker', unique_ticker)
 
 # Sidebar - display_chart
-display_chart = ["시세표", "종가", "거래량", "전일비"]
+display_chart = ["시세표", "종가", "거래량"] # "전일비"
 selected_chart = st.sidebar.multiselect('display chart', display_chart, display_chart)
 
 # get data on this ticker
@@ -48,7 +48,7 @@ if "거래량" in selected_chart:
    px_volumne = px.bar(tickerDf[["Volume"]])
    px_volumne
 
-if "전일비" in selected_chart:  
-   st.write("## 전일비")
-   px_change = px.area(tickerDf[["Change"]])
-   px_change
+# if "전일비" in selected_chart:  
+#    st.write("## 전일비")
+#    px_change = px.area(tickerDf[["Change"]])
+#    px_change
